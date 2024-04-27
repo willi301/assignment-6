@@ -38,10 +38,23 @@ function submitFunction() {
 
     console.log(top5);
 
+    //var tbodyRef = document.getElementById('myTable').getElementsByTagName('tbody')[0];
+    
+    
     var tbodyRef = document.getElementById('myTable').getElementsByTagName('tbody')[0];
-
+    if (tbodyRef) {
+        tbodyRef.innerHTML = ""; // Clear the existing table body content
+        for (const [word, frequency] of Object.entries(top5)) {
+            // Insert a new row at the end of the table body
+            var newRow = tbodyRef.insertRow();
+            // ... (rest of your code to add cells and content)
+        }
+    } 
 
     for (const [word, frequency] of Object.entries(top5)) {
+
+
+
         // Insert a row at the end of table
         var newRow = tbodyRef.insertRow();
 
